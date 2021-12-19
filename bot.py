@@ -12,7 +12,7 @@ print(stdout.readlines())
 pa.close()
 
 
-TOKEN = ""
+TOKEN = "OTIyMTA4NDM0Mzc4MjcyNzc4.Yb8qZg.o1kZsZUpAfjHRpEbiIznyYGfpto"
 client = discord.Client()
 
 @client.event
