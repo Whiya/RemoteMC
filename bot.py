@@ -5,7 +5,7 @@ from paramiko import server
 
 pa = paramiko.SSHClient()
 pa.set_missing_host_key_policy(paramiko.WarningPolicy())
-pa.connect("localhost",username="root",password="Riyaya_mumei_1528")
+pa.connect("localhost",username="root",password="")
 cmds = "echo ba-ka"
 stdin, stdout, stderr = pa.exec_command(cmds)
 print(stdout.readlines())
