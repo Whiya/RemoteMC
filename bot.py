@@ -4,7 +4,7 @@ import configparser
 import paramiko
 import discord
 from paramiko import server
-
+import os
 
 #server作成（登録）
 def server_create(msg,msg_id):
@@ -16,14 +16,16 @@ def server_create(msg,msg_id):
     configs(name,adress,user,paswd)
     #設定終わり
     #設定完了メッセージ
+    return "登録が完了しました。"
 
     
 #サーバを削除
 def server_delete(msg,msg_id):
-    name = msg[3]
-    
-
+    name = msg[2]
+    path = "./servers/"+name+".ini"
+    os.remove(path)
     #おわり
+    return "削除が完了しました。"
 
 
 
@@ -40,7 +42,7 @@ def configs(server_name,adress,user,passwd):
         'user': user,
         "passwd" : passwd
     }
-    with open("/home/remote_mc/servers/"+server_name+".ini", 'w') as file:
+    with open("./servers/"+server_name+".ini", 'w') as file:
         config.write(file)
 
 
@@ -78,22 +80,24 @@ async def on_message(message):
             ls = len(msg)
             #第二引数確認 作成、削除、サーバー名（その他）
             if msg[1] == "create":
-                server_create(msg,message.id)
-            elif msg[2] == "delete":
-                server_delete(msg,message.id)
+                kekka = server_create(msg,message.id)
+                await message.channel.send(kekka)
+            elif msg[1] == "delete":
+                kekka = server_delete(msg,message.id)
+                await message.channel.send(kekka)
             else:
                 #サーバー名の場合
                 #サーバー関数の中で色々
                 #servers()
                 print("test")
             
-            await message.channel.send("uwei")
             
 
 #メンバーが入ったときのイベント  
 @client.event
 async def on_member_join(member):
     print("test")
+
 
 client.run(TOKEN)
 
