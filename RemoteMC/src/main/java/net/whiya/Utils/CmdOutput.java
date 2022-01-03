@@ -33,8 +33,8 @@ public class CmdOutput extends Thread {
             while ((s = br.readLine()) != null) {
                 client.getChannelById(Snowflake.of(server.getConsoleChannelID())).createMessage(s);
             }
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

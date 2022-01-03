@@ -7,6 +7,7 @@ import discord4j.core.object.entity.Message;
 import discord4j.core.object.entity.channel.MessageChannel;
 import net.whiya.DataBase.Config;
 import net.whiya.DataBase.ServerData;
+import net.whiya.Utils.Logger;
 import net.whiya.Utils.Server;
 import net.whiya.Utils.SystemCall;
 
@@ -87,9 +88,10 @@ public final class Main {
         Server server = serverData.getServer(server_name);
 
         // フォルダ移動
-        String command = "cd " + server.getPath();
+        String command = "ping google.com";
+        Logger.info(command);
 
-        SystemCall.sendCommand(command);
+        SystemCall.sendCommand(command, server);
 
 
         command = config.getStartCommand().replace("{jar_name}", server.getJarName())
@@ -97,7 +99,7 @@ public final class Main {
                 .replace("{max}", server.getMaxMemory())
                 .replace("{option}", server.getOption());
 
-        SystemCall.sendCommand(command);
+        SystemCall.sendCommand(command, server);
     }
 
     //鯖の停止
@@ -112,25 +114,4 @@ public final class Main {
     }
 
 
-
-    private class printOutput extends Thread {
-        InputStream is = null;
-
-        printOutput(InputStream is, String type) {
-            this.is = is;
-        }
-
-        public void run() {
-            String s = null;
-            try {
-                BufferedReader br = new BufferedReader(
-                        new InputStreamReader(is));
-                while ((s = br.readLine()) != null) {
-                    System.out.println(s);
-                }
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
-            }
-        }
-    }
 }
