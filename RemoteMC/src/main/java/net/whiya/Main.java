@@ -5,7 +5,10 @@ import discord4j.core.GatewayDiscordClient;
 import discord4j.core.event.domain.message.MessageCreateEvent;
 import discord4j.core.object.entity.Message;
 import discord4j.core.object.entity.channel.MessageChannel;
-import net.whiya.Config.Config;
+import net.whiya.DataBase.Config;
+import net.whiya.DataBase.ServerData;
+import net.whiya.Utils.Server;
+import net.whiya.Utils.SystemCall;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,25 +16,30 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public final class Main {
-
     private static Config config;
+    private static SystemCall systemCall;
+    public static DiscordClient client;
+    public static GatewayDiscordClient gateway;
+    public static ServerData serverData;
 
-    public Main.printOutput getStreamWrapper(InputStream is, String type) {
-        return new Main.printOutput(is, type);
-    }
+
 
     public static void main(final String[] args) {
-        config = new Config();
+        config      = new Config();
+        serverData  = new ServerData();
+        systemCall  = new SystemCall();
+
         config.load();
+        serverData.load();
 
 
-        String token = config.getBotToken();
-        token = token.substring(0, token.length() - 1);
-        token = token.substring(1);
-        System.out.println(token);
-        final DiscordClient client = DiscordClient.create(token);
-        final GatewayDiscordClient gateway = client.login().block();
+        //discordbot関係開始
 
+        //トークン
+        client = DiscordClient.create(config.getToken());
+        gateway = client.login().block();
+
+        //イベント
         gateway.on(MessageCreateEvent.class).subscribe(event -> {
             final Message message = event.getMessage();
             String content = message.getContent();
@@ -50,10 +58,11 @@ public final class Main {
                 switch (ct[1]){
                     case "start" :
                         start(ct[2]);
-                        //処理
+                        channel.createMessage("スタートを検知").block();
                         break;
                     case "stop" :
                         stop(ct[2]);
+                        channel.createMessage("ストップを検知").block();
                         //処理
                         break;
                     case "help" :
@@ -68,45 +77,41 @@ public final class Main {
 
         gateway.onDisconnect().block();
 
-
+        //discordbot関係終了
     }
 
-    //鯖の起動
+    // 鯖の起動
     public static void start(String server_name){
-        //鯖の名前からティレクトリなどを取得
-        String[] server = config.read(server_name);
 
-        String command = "java -Xms2G -Xmx2G -jar server.jar nogui";
-        sendCommand(server, command);
+        // server情報の取得
+        Server server = serverData.getServer(server_name);
+
+        // フォルダ移動
+        String command = "cd " + server.getPath();
+
+        SystemCall.sendCommand(command);
+
+
+        command = config.getStartCommand().replace("{jar_name}", server.getJarName())
+                .replace("{min}", server.getMinMemory())
+                .replace("{max}", server.getMaxMemory())
+                .replace("{option}", server.getOption());
+
+        SystemCall.sendCommand(command);
     }
 
     //鯖の停止
     public static void stop(String server_name){
         //鯖の名前からティレクトリなどを取得
-        String[] server = config.read(server_name);
+        // String[] server = config.read(server_name);
 
         String command = "stop";
-        sendCommand(server, command);
+        //sendCommand(server, command);
 
 
     }
 
-    public static void sendCommand(String[] server,String command){
-        Runtime rt = Runtime.getRuntime();
-        Main rte = new Main();
-        printOutput errorReported, outputMessage;
-        try {
-            Process sc = rt.exec("screen -x "+server[1]);
-            Process dl = rt.exec("cd "+server[0]);
-            Process proc = rt.exec(command);
-            errorReported = rte.getStreamWrapper(proc.getErrorStream(), "ERROR");
-            outputMessage = rte.getStreamWrapper(proc.getInputStream(), "OUTPUT");
-            errorReported.start();
-            outputMessage.start();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+
 
     private class printOutput extends Thread {
         InputStream is = null;
