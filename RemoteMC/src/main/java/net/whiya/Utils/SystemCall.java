@@ -1,15 +1,16 @@
 package net.whiya.Utils;
 
 public class SystemCall {
-    public static void sendCommand(String command, Server server) {
+    public static void sendCommand(String command) {
+        Logger.info(command);
         Runtime rt = Runtime.getRuntime();
         CmdOutput rte = new CmdOutput();
         CmdOutput errorReported, outputMessage;
         try {
             Process proc = rt.exec(command);
-            // errorReported = rte.getStreamWrapper(proc.getErrorStream(), "ERROR", server);
-            outputMessage = rte.getStreamWrapper(proc.getInputStream(), "OUTPUT", server);
-            // errorReported.run();
+            //errorReported = rte.getStreamWrapper(proc.getErrorStream(), "ERROR");
+            outputMessage = rte.getStreamWrapper(proc.getInputStream(), "OUTPUT");
+            //errorReported.run();
             outputMessage.run();
         } catch (Exception e) {
             e.printStackTrace();

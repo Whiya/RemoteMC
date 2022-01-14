@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="RemoteMC:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1886b90b-8dbd-4124-a28b-5a8580afe59a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/whiya/Config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/whiya/Config/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/whiya/Utils/Temp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/whiya/Utils/Timer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/RemoteMC_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/RemoteMC_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server_data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/whiya/DataBase/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/whiya/DataBase/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/whiya/DataBase/ServerData.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/whiya/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/whiya/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/whiya/Utils/CmdOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/whiya/Utils/CmdOutput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/whiya/Utils/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/RemoteMC.jar/production/RemoteMC/net/whiya/DataBase/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/RemoteMC.jar/production/RemoteMC/net/whiya/DataBase/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/RemoteMC.jar/production/RemoteMC/net/whiya/DataBase/ServerData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/RemoteMC.jar/production/RemoteMC/net/whiya/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/RemoteMC.jar/production/RemoteMC/net/whiya/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/RemoteMC.jar/production/RemoteMC/net/whiya/Utils/Server.class" beforeDir="false" />
     </list>
-    <list id="aa5add5d-4623-4e7a-81ee-fd97792dd72a" name="Changes by mumei" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/whiya/Config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/whiya/Config/Config.java" afterDir="false" />
+    <list id="d77ff208-a5e4-4b67-8731-61599db39c8c" name="Changes by mumei" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/net/whiya/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/whiya/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/whiya/Utils/CmdOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/whiya/Utils/CmdOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/whiya/Utils/SystemCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/whiya/Utils/SystemCall.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,30 +57,33 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/src/main/java/net/whiya/Main.java">
       <ranges>
-        <range start1="5" end1="6" start2="5" end2="5" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
-        <range start1="7" end1="8" start2="6" end2="6" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
-        <range start1="9" end1="9" start2="7" end2="13" changelist="aa5add5d-4623-4e7a-81ee-fd97792dd72a" />
-        <range start1="12" end1="12" start2="16" end2="22" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
-        <range start1="13" end1="14" start2="23" end2="31" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
-        <range start1="27" end1="33" start2="44" end2="45" changelist="aa5add5d-4623-4e7a-81ee-fd97792dd72a" />
-        <range start1="35" end1="36" start2="47" end2="48" changelist="aa5add5d-4623-4e7a-81ee-fd97792dd72a" />
-        <range start1="38" end1="40" start2="50" end2="52" changelist="aa5add5d-4623-4e7a-81ee-fd97792dd72a" />
-        <range start1="42" end1="43" start2="54" end2="56" changelist="aa5add5d-4623-4e7a-81ee-fd97792dd72a" />
-        <range start1="45" end1="46" start2="58" end2="59" changelist="aa5add5d-4623-4e7a-81ee-fd97792dd72a" />
-        <range start1="49" end1="50" start2="62" end2="64" changelist="aa5add5d-4623-4e7a-81ee-fd97792dd72a" />
-        <range start1="55" end1="55" start2="69" end2="129" changelist="aa5add5d-4623-4e7a-81ee-fd97792dd72a" />
+        <range start1="2" end1="2" start2="2" end2="3" changelist="d77ff208-a5e4-4b67-8731-61599db39c8c" />
+        <range start1="8" end1="11" start2="9" end2="9" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="12" end1="12" start2="10" end2="11" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="13" end1="17" start2="12" end2="13" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="19" end1="20" start2="15" end2="15" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="21" end1="21" start2="16" end2="17" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="23" end1="24" start2="19" end2="21" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="29" end1="30" start2="26" end2="26" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="33" end1="34" start2="29" end2="29" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="42" end1="42" start2="37" end2="39" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="46" end1="47" start2="43" end2="43" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="51" end1="51" start2="47" end2="68" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="53" end1="57" start2="70" end2="71" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="58" end1="75" start2="72" end2="76" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="83" end1="102" start2="84" end2="87" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="104" end1="114" start2="89" end2="89" changelist="d77ff208-a5e4-4b67-8731-61599db39c8c" />
       </ranges>
     </file>
-    <file path="$PROJECT_DIR$/src/main/java/net/whiya/Config/Config.java">
+    <file path="$PROJECT_DIR$/src/main/java/net/whiya/Utils/CmdOutput.java">
       <ranges>
-        <range start1="4" end1="4" start2="4" end2="5" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
-        <range start1="6" end1="7" start2="7" end2="7" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
-        <range start1="10" end1="12" start2="10" end2="14" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
-        <range start1="14" end1="15" start2="16" end2="17" changelist="aa5add5d-4623-4e7a-81ee-fd97792dd72a" />
-        <range start1="16" end1="18" start2="18" end2="22" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
-        <range start1="23" end1="24" start2="27" end2="32" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
-        <range start1="25" end1="25" start2="33" end2="52" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
-        <range start1="27" end1="28" start2="54" end2="55" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="5" end1="6" start2="5" end2="5" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="9" end1="10" start2="8" end2="8" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="15" end1="16" start2="13" end2="13" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
+        <range start1="17" end1="18" start2="14" end2="14" changelist="d77ff208-a5e4-4b67-8731-61599db39c8c" />
+        <range start1="21" end1="22" start2="17" end2="18" changelist="d77ff208-a5e4-4b67-8731-61599db39c8c" />
+        <range start1="23" end1="24" start2="19" end2="19" changelist="d77ff208-a5e4-4b67-8731-61599db39c8c" />
+        <range start1="33" end1="34" start2="28" end2="29" changelist="1886b90b-8dbd-4124-a28b-5a8580afe59a" />
       </ranges>
     </file>
   </component>
@@ -78,7 +98,9 @@
     </option>
   </component>
   <component name="ProjectId" id="22rn9lVWVPxjELXvmbwfpVcDm8C" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -86,15 +108,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/target/RemoteMC.jar/production/RemoteMC/net/whiya" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="CodeWithMe" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\riyaya1528\Documents\GitHub\RemoteMC\RemoteMC\target\RemoteMC.jar\production\RemoteMC\net\whiya" />
       <recent name="C:\Users\riyaya1528\Documents\GitHub\RemoteMC\RemoteMC\src\main\java\net\whiya" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="net.whiya.Config" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -190,5 +218,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

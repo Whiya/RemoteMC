@@ -9,15 +9,13 @@ import java.nio.file.Paths;
 
 public class Config {
 
-
     private ObjectMapper mapper;
     private String json;
     private JsonNode jnode;
     private ObjectNode onode;
 
-    private String token, startCommand;
-
-    //config.jsonのロード
+    private String token, prefix;
+    private Long channel;
 
     public void load() {
         mapper = new ObjectMapper();
@@ -27,13 +25,12 @@ public class Config {
             onode = jnode.deepCopy();
 
             token = onode.get("token").asText();
-            startCommand = onode.get("start_command").asText();
+            prefix = onode.get("prefix").asText();
+            channel = onode.get("channel").asLong();
         } catch (Exception e) {
             Logger.warn("Couldn't load config.json");
         }
     }
-
-    //config.jsonのセーブ
 
     public void save() {
         try {
@@ -43,15 +40,20 @@ public class Config {
         }
     }
 
-    //トークンを与えます
 
     public String getToken() {
         return token;
     }
 
-    //起動構成を与えます
+    public String getPrefix() {
+        return prefix;
+    }
 
-    public String getStartCommand() {
-        return startCommand;
+    public Long getChannel() {
+        return channel;
+    }
+
+    public void setChannel(Long channel) {
+        this.channel = channel;
     }
 }
